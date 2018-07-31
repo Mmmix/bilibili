@@ -1,0 +1,22 @@
+<!--pages/rank/rank.wxml-->
+<import src="../common/item.wxml" />
+
+<view class="row-container">
+  <navigator class="header">
+    <view class="left">
+      <view class="bilibili-index-sprite bilibili-index-hot">
+        <image src="../../resources/images/paihang.png"></image>
+      </view>
+      <text>热门排行</text>
+    </view>
+    <view class="right">
+      <text>{{note}}</text>
+    </view>
+  </navigator>
+  <view class="content-wrapper">
+    <block wx:for="{{rankList}}" wx:key="aid">
+      <!-- 使用热门推荐模板，传入当前循环对象item -->
+      <template is="jiefItem1" data="{{...item}}" />
+    </block>
+  </view>
+</view>
